@@ -18,11 +18,14 @@ angular.module('SimpleRESTIonic.services', [])
 
     getMenuInner = function () {
       console.log('start inner');
-      return $http({
+      return $http ({
         method: 'GET',
-        url: Backand.getApiUrl() + '/1/objects/root/1?deep=true',
-        params: {}
-      })
+        url: Backand.getApiUrl() + '/1/objects/action/root/1',
+        params: {
+          name: 'menu',
+          parameters: {}
+        }
+      });
     }
 
 
@@ -110,7 +113,7 @@ angular.module('SimpleRESTIonic.services', [])
     service.anonymousLogin= function(){
       // don't have to do anything here,
       // because we set app token att app.js
-    }
+    };
 
     service.socialSignIn = function (provider) {
       return Backand.socialSignIn(provider);

@@ -11,9 +11,9 @@ angular.module('ionicApp',
     'ionMdInput'
   ])
   .config(function (BackandProvider) {
-    BackandProvider.setAppName('mycompanystart');
-    BackandProvider.setSignUpToken('8b87f9fa-f751-4400-bded-6b5adcc9312a');
-    BackandProvider.setAnonymousToken('86e22c04-85c5-498a-a6cd-037293f8477c');
+    BackandProvider.setAppName('netafimstart');
+    BackandProvider.setSignUpToken('5d3463b6-ae1e-4885-8d59-caa78480d9b5');
+    BackandProvider.setAnonymousToken('dbbb1c5d-d14e-4de1-bb98-5499c1d258bb');
   })
   .config(function ($ionicConfigProvider) {
     $ionicConfigProvider.scrolling.jsScrolling(false);
