@@ -8,7 +8,8 @@ angular.module('ionicApp',
     'SimpleRESTIonic.controllers',
     'SimpleRESTIonic.services',
     'directivesModule',
-    'ionMdInput'
+    'ionMdInput',
+    'ngCordova'
   ])
   .config(function (BackandProvider) {
     BackandProvider.setAppName('netafimstart');
