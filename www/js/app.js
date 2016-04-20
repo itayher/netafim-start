@@ -12,9 +12,9 @@ angular.module('ionicApp',
     'ngCordova'
   ])
   .config(function (BackandProvider) {
-    BackandProvider.setAppName('devcompstart2');
-    BackandProvider.setSignUpToken('b7c3f9c5-f509-4cd8-a8b8-fe79a9dcf431');
-    BackandProvider.setAnonymousToken('e0916818-3e5f-4b8f-b52d-d2377ab3802a');
+    BackandProvider.setAppName('netafimstart');
+    BackandProvider.setSignUpToken('5d3463b6-ae1e-4885-8d59-caa78480d9b5');
+    BackandProvider.setAnonymousToken('dbbb1c5d-d14e-4de1-bb98-5499c1d258bb');
   })
   .config(function ($ionicConfigProvider) {
     $ionicConfigProvider.scrolling.jsScrolling(false);
