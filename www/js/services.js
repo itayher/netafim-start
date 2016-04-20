@@ -7,7 +7,7 @@ angular.module('SimpleRESTIonic.services', [])
       if (response.status === 401) {
         $rootScope.$broadcast('unauthorized');
       }
-      return $q.reject(response);
+      return response;
     };
   })
   /**
@@ -51,12 +51,17 @@ angular.module('SimpleRESTIonic.services', [])
         service.started = deferred.promise;
         getMenuInner()
           .then(function (res) {
-              service.cached = res.data;
-              localStorage.setItem('storedData', JSON.stringify(res.data));
+              if (res.status === 200) {
+                service.cached = res.data;
+                localStorage.setItem('storedData', JSON.stringify(res.data));
+                deferred.resolve(res.data);
+              }
+            
               service.started = undefined;
-              deferred.resolve(res.data);
             },
             function () {
+              service.started = undefined;
+
               // have an error from html service.
               // try to get from cache
 
@@ -71,7 +76,11 @@ angular.module('SimpleRESTIonic.services', [])
               }
 
               deferred.reject(new Error("can't find data in cache"));
-            });
+            })
+          .finally(function () {
+            console.log('finally');
+            service.started = undefined;
+          });
 
         return deferred.promise;
       }
