@@ -33,12 +33,21 @@ div.spinner {
 }
 
 .scroll-content2 {
-  background: url(../img/mountains.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  animation: animatedBackground 10s linear;
+     background: url(../img/netafim.jpeg) no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+     animation: animatedBackground 10s linear;
+ }
+
+.scroll-content3 {
+    background: url(../img/buildingsImage.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    animation: animatedBackground 10s linear;
 }
 
 .back-button {

@@ -1,6 +1,6 @@
 <ion-view align-title="center">
-  <ion-nav-title><img src="img/logo-netafim.png" style="height:40px; position: relative;left:50px;"/>{{title}}</ion-nav-title>
-  <ion-content >
+  <ion-nav-title>{{title}}</ion-nav-title>
+  <ion-content class="scroll-content3">
     <ion-refresher
       pulling-text="Pull to refresh..."
       on-refresh="refreshData()">
@@ -8,13 +8,15 @@
     <div class="spinner" ng-show="!dataReady">
       <ion-spinner icon="bubbles"></ion-spinner>
     </div>
-    <div ng-show="dataReady" ng-repeat="item in data"
+    <div ng-show="dataReady" ng-repeat="item in data | filter: {visible:1}"
          ui-sref="tabs.dashboard({sectionId: item.sectionId})"
          class="list condensed-space no-padding animate-blinds done animated lightSpeedIn menu-close"
-         style="margin: 0px; {{item.color}}">
-      <a ng-show="dataReady" class="item clear-bg item-bg-image">
+         style="margin: 0px; {{item.color}}; opacity: 0.9; ">
+      <a ng-show="dataReady" class="item clear-bg item-bg-image" style="margin-bottom:0px;">
         <h2>{{item.sectionTitle}}</h2>
       </a>
     </div>
   </ion-content>
 </ion-view>
+
+

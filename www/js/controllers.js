@@ -151,20 +151,21 @@ angular.module('SimpleRESTIonic.controllers', [])
 
 
     function init(force) {
-      var colorArray = ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B',
-        '#FFC107'];
+      var colorArray = ['2,166,118', '0,140,114', '0,115,105', '0,90,91', '0,56,64', '2,166,118', '0,140,114', '0,115,105', '0,90,91', '0,56,64'];
 
 
       return MenuService.getMenu(force).then(function (data) {
 
         $scope.data = angular.copy(data.sections);
-        for (i = 0; i < $scope.data.length; i++) {
+        for (var i = 0; i < $scope.data.length; i++) {
+
+          $scope.data[i].visible = ($scope.data[i].items.length === 0) ? 0 : 1;
 
           if (i >= colorArray.length) {
-            $scope.data[i].color = 'background-color: #FF9800;';
+            $scope.data[i].color = 'background-color: rgba(2,166,118,0.9)';
           }
           else {
-            $scope.data[i].color = 'background-color: ' + colorArray[i];
+            $scope.data[i].color = 'background-color: rgba(' + colorArray[i] + ',0.9)';
           }
         }
 
