@@ -151,7 +151,7 @@ angular.module('SimpleRESTIonic.controllers', [])
 
 
     function init(force) {
-      var colorArray = ['2,166,118', '0,140,114', '0,115,105', '0,90,91', '0,56,64', '2,166,118', '0,140,114', '0,115,105', '0,90,91', '0,56,64'];
+      var colorArray = ['2,166,118', '0,140,114', '0,115,105', '0,90,91', '0,56,64', '0,41,64', '0,56,87', '0,76,118', '0,93,145', '0,119,185'];
 
 
       return MenuService.getMenu(force).then(function (data) {
